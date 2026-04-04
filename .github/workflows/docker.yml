@@ -28,3 +28,10 @@ jobs:
         file: ${{ matrix.service.dockerfile }}
         push: false
         tags: ${{ matrix.service.image_name }}:test
+  
+  docker-all-success:
+    runs-on: ubuntu-latest
+    needs: [docker-build]
+    steps:
+      - name: Confirm All Builds Passed
+        run: echo "All Docker images were built successfully!"
