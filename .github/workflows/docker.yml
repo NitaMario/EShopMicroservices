@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         service:
-          - { name: "Catalog", context: "./src", dockerfile: "./src/Services/Catalog/Catalog.API/Dockerfile" }
+          - { name: "Catalog", context: "./src", dockerfile: "./src/Services/Catalog/Catalog.API/Dockerfile", image_name: "catalog" }
     steps:
     - name: Checkout Repository Code
       uses: actions/checkout@v4
@@ -27,4 +27,4 @@ jobs:
         context: ${{ matrix.service.context }}
         file: ${{ matrix.service.dockerfile }}
         push: false
-        tags: ${{ matrix.service.name }}:test
+        tags: ${{ matrix.service.image_name }}:test
