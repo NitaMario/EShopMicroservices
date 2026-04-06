@@ -14,6 +14,7 @@ jobs:
       matrix:
         service:
           - { name: "Catalog", context: "./src", dockerfile: "./src/Services/Catalog/Catalog.API/Dockerfile", image_name: "catalog" }
+          - { name: "Basket", context: "./src", dockerfile: "./src/Services/Basket/Basket.API/Dockerfile", image_name: "basket" }
     steps:
     - name: Checkout Repository Code
       uses: actions/checkout@v4
