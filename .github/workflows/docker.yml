@@ -17,6 +17,7 @@ jobs:
           - { name: "Basket", context: "./src", dockerfile: "./src/Services/Basket/Basket.API/Dockerfile", image_name: "basket" }
           - { name: "Discount", context: "./src", dockerfile: "./src/Services/Discount/Discount.Grpc/Dockerfile", image_name: "discount" }
           - { name: "Ordering", context: "./src", dockerfile: "./src/Services/Ordering/Ordering.API/Dockerfile", image_name: "ordering" }
+          - { name: "YarpApiGateway", context: "./src", dockerfile: "./src/ApiGateways/YarpApiGateway/Dockerfile", image_name: "yarpapigateway" }
     steps:
     - name: Checkout Repository Code
       uses: actions/checkout@v4
