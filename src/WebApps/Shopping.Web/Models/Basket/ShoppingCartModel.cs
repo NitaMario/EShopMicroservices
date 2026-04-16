@@ -2,7 +2,7 @@
 
 public class ShoppingCartModel
 {
-    public string UserNamw { get; set; } = default!;
+    public string UserName { get; set; } = default!;
     public List<ShoppingCartItemModel> Items { get; set; } = new();
     public decimal TotalPrice => Items.Sum(x => x.Price * x.Quantity);
 }
